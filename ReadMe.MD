@@ -1,4 +1,4 @@
-#Back Propagation Neural Network
+Back Propagation Neural Network
 
 An implementation of neural network back propagation algorithm used to train the XOR function.
 
@@ -35,7 +35,8 @@ configurations.
 The same neural network framework will be used to train the Robocode tanks using Reinforcement
 learning in later parts of the assignment.
 
-###Testing
+Testing
+
 **Test Driven Development (TDD)** approach is used where the software is made as modular as 
 possible via Java methods.  The test cases of each method are written in JUnit that drives the
 actual coding of the method.  This ensures each method is tested thoroughly in terms of 

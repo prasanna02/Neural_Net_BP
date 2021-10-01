@@ -22,7 +22,7 @@ public class XOR {
         double totalError;
         double acceptError = 0.05;
         int epoch;
-        FileWriter errorFile = null, weightFile = null;
+        FileWriter errorFile = null, weightFile = null, epochFile = null;
 
         /**
          * Training data sets (inputs and outputs) for XOR including both binary and bipolar representation.
@@ -79,6 +79,8 @@ public class XOR {
         // Create and initialize NN
         NeuralNet xorNN = new NeuralNet(actFn,2,4, learningRate, momentumTerm, -1, 1);
 
+        epochFile = xorNN.createFile("epoch_cnt.txt");
+
         for (int t = 0; t < numTrial; t++) {
             // Initialize weights and epoch number for each trial
             xorNN.initializeWeights();
@@ -113,6 +115,9 @@ public class XOR {
                 xorNN.save(weightFile);
                 xorNN.closeFile(weightFile);
             }
+
+            xorNN.writeDetail(epochFile, t+1, epoch);
         }
+        xorNN.closeFile(epochFile);
     }
 }
